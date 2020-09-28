@@ -1,0 +1,5 @@
+---
+  - name: Ansible connection test
+    hosts: ObliviousTM-1
+    roles:
+      - test_connection

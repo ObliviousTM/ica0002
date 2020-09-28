@@ -1,0 +1,1 @@
+path = /home/rashad/ica0002/roles/nginx/tasks --- changed
