@@ -15,4 +15,3 @@
     become: yes
     notify: restart nginx
       
-
