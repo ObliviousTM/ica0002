@@ -1,0 +1,6 @@
+---
+-  name: Bind9
+   hosts: db_servers
+   roles:
+    - Bind9
+   become: yes
