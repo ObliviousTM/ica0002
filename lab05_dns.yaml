@@ -1,0 +1,14 @@
+---
+-  name: Bind9
+   hosts: db_servers
+   roles:
+    - Bind9
+   become: yes
+
+- name: OblivousTM-2
+  hosts: 
+  become: yes
+  tasks:
+    - template:
+        src: /home/rashad/ica0002/roles/bind/templates/resolve.conf
+        dest: /etc/resolv.conf

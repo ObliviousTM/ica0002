@@ -1,19 +1,23 @@
 --- 
-  - name: user make
-    user:
-     name: juri
-     name: roman  
-    
-  - name: Juri SSH key
-    authorized_key:
-      user: juri
-      state: present
-      key: https://github.com/hudolejev.keys
+- name: user make
+  user:
+    name: roman
+    name: juri
+
+- name: Roman SSH key  
+  authorized_key:
+    user: roman
+    state: present
+    key: https://github.com/romankuchin.keys
+
+- name: Juri SSH key
+  authorized_key:
+    user: juri
+    state: present
+    key: https://github.com/hudolejev.keys
+      
+
      
-  - name: Roman SSH key  
-    authorized_key:
-      user: roman
-      state: present
-      key: https://github.com/romankuchin.keys
+  
      
 

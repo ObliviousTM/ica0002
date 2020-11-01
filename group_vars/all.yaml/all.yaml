@@ -14,3 +14,5 @@ dns_forwarders:
   - 8.8.8.8
   - 9.9.9.9
   - 9.9.9.10
+local_network: 192.168.42.0/24
+localhost: 127.0.0.0/8
