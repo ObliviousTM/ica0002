@@ -1,15 +1,64 @@
-ObliviousTM-1 ansible_host=193.40.156.86 ansible_port=6622 ansible_ssh_user=ubuntu ansible_python_interpreter=python3
-ObliviousTM-2 ansible_host=193.40.156.86 ansible_port=8322 ansible_ssh_user=ubuntu ansible_python_interpreter=python3
+ObliviousTM-1 ansible_host=193.40.156.86 ansible_port=7622 ansible_ssh_user=ubuntu ansible_python_interpreter=python3
+ObliviousTM-2 ansible_host=193.40.156.86 ansible_port=1822 ansible_ssh_user=ubuntu ansible_python_interpreter=python3
+ObliviousTM-3 ansible_host=193.40.156.86 ansible_port=6222 ansible_ssh_user=ubuntu ansible_python_interpreter=python3
 
 [app_servers]
 ObliviousTM-1
+ObliviousTM-2
+ObliviousTM-3
 
-[web_servers] 
+
+[dns_masters]
+ObliviousTM-3
+
+[dns_slaves]
 ObliviousTM-1
+ObliviousTM-2
+
+
+[dns_servers:children]
+dns_masters
+dns_slaves
+
+[prometheus]
+ObliviousTM-1
+ObliviousTM-2
+ObliviousTM-3
+
 
 [db_servers]
+ObliviousTM-1 mysql_server_id=80
+ObliviousTM-2 mysql_server_id=24
+
+[web_servers]
+ObliviousTM-1
 ObliviousTM-2
 
-[dns_servers]
+[node_exporters]
+ObliviousTM-1
 ObliviousTM-2
 
+[grafana]
+ObliviousTM-3
+
+[influxdb]
+ObliviousTM-3
+
+[pinger]
+ObliviousTM-3
+
+[docker_servers]
+ObliviousTM-1
+ObliviousTM-2
+ObliviousTM-3
+
+[haproxy]
+ObliviousTM-1
+ObliviousTM-2
+
+[application_vms]
+ObliviousTM-1
+ObliviousTM-2
+
+[internal_vm]
+ObliviousTM-3

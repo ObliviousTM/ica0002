@@ -1,17 +1,16 @@
----
-  - name: Ensure nginx is installed and in working state
-    apt:
-      name: nginx
-      
-  - name: start nginx
-    service:
-      name: nginx
-      state: started
-    
-  - name: copy the content of the web site
-    copy:
-      src: /home/rashad/ica0002/roles/nginx/files/uwsgi_app.cfg
-      dest: /etc/nginx/sites-enabled/default
-    become: yes
-    notify: restart nginx
-      
+- name: Ensure nginx is installed and in working state
+  apt: 
+    name: nginx  
+
+- name: Copy Nginx default config to sites-enabled
+  template:
+    src: default.j2
+    dest: /etc/nginx/sites-enabled/default
+  notify: restart nginx
+
+- name: start nginx
+  service:
+    name: nginx
+    state: started 
+    enabled: yes
+  become: yes
