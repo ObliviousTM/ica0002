@@ -27,13 +27,12 @@
     mode: '0400'
   when: inventory_hostname == "ObliviousTM-2"
   
-- name: Grafana directory
-  file:
-    name: /opt/docker/grafana
-    state: directory
-    owner: "472"
-    group: "472"
-    recurse: true
+#- name: Grafana directory
+ #  name: /opt/docker/grafana
+    #state: directory
+    #owner: "472"
+    #group: "472"
+    #recurse: true
 
 - name: Add the user to the Grafana group on the ObliviousTM-3
   user:
