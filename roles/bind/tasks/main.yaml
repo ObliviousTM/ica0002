@@ -30,6 +30,7 @@
   template:
     src: ../templates/db.rdash.j2
     dest: /var/lib/bind/db.rdash.io
+    force: no
   notify: Reload rndc
   when: inventory_hostname in groups['dns_masters']
   
